@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "PracticeNew2022"
+		},
+		"EmployeeN_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'EmployeeN'"
+		},
+		"SqlServe11_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServe11'"
+		},
+		"SqlServe11_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServe11'"
+		},
+		"SqlServe11_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "LAPTOP-NN2BEUF4\\dawin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "PracticeNew2022_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"EmployeeN_connectionString": {
+						"value": "[parameters('EmployeeN_connectionString')]"
+					},
+					"SqlServe11_connectionString": {
+						"value": "[parameters('SqlServe11_connectionString')]"
+					},
+					"SqlServe11_password": {
+						"value": "[parameters('SqlServe11_password')]"
+					},
+					"SqlServe11_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServe11_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
