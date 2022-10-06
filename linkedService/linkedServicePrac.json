@@ -1,0 +1,17 @@
+{
+	"name": "linkedServicePrac",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyPrac",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "Secret-ConnectionStr"
+			}
+		}
+	}
+}
