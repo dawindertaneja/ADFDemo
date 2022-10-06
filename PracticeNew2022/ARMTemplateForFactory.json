@@ -22,6 +22,14 @@
 		"SqlServe11_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "LAPTOP-NN2BEUF4\\dawin"
+		},
+		"AzureKeyPrac_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://KV-DEV-PRACTICE-NEW.vault.azure.net/"
+		},
+		"linkedServicePrac_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "Secret-ConnectionStr"
 		}
 	},
 	"variables": {
@@ -97,7 +105,8 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2022-09-28T06:17:57Z"
 			},
 			"dependsOn": []
 		},
@@ -374,6 +383,41 @@
 				"[concat(variables('factoryId'), '/datasets/Employee')]",
 				"[concat(variables('factoryId'), '/datasets/Dept')]",
 				"[concat(variables('factoryId'), '/datasets/output')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureKeyPrac')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('AzureKeyPrac_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedServicePrac')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "AzureKeyPrac",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('linkedServicePrac_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureKeyPrac')]"
 			]
 		}
 	]

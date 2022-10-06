@@ -23,6 +23,14 @@
 			"type": "string",
 			"defaultValue": "LAPTOP-NN2BEUF4\\dawin"
 		},
+		"AzureKeyPrac_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://KV-DEV-PRACTICE-NEW.vault.azure.net/"
+		},
+		"linkedServicePrac_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "Secret-ConnectionStr"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +69,12 @@
 					},
 					"SqlServe11_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServe11_properties_typeProperties_userName')]"
+					},
+					"AzureKeyPrac_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyPrac_properties_typeProperties_baseUrl')]"
+					},
+					"linkedServicePrac_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('linkedServicePrac_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
