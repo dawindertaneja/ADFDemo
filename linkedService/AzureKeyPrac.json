@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyPrac",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://KV-DEV-PRACTICE-NEW.vault.azure.net/"
+		}
+	}
+}
