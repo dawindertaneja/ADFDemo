@@ -1,0 +1,9 @@
+{
+	"name": "AzDev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "744050f6-c244-462c-8972-b7f10072f4ed",
+		"tenantId": "c3bf4206-28e8-413d-8c31-6291f39b4264"
+	}
+}
