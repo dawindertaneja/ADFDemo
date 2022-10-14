@@ -19,13 +19,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServe11'"
 		},
-		"SqlServe11_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "LAPTOP-NN2BEUF4\\dawin"
-		},
 		"AzureKeyPrac_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://KV-DEV-PRACTICE-NEW.vault.azure.net/"
+		},
+		"SqlServe11_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "LAPTOP-NN2BEUF4\\dawin"
 		},
 		"linkedServicePrac_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
@@ -67,11 +67,11 @@
 					"SqlServe11_password": {
 						"value": "[parameters('SqlServe11_password')]"
 					},
-					"SqlServe11_properties_typeProperties_userName": {
-						"value": "[parameters('SqlServe11_properties_typeProperties_userName')]"
-					},
 					"AzureKeyPrac_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyPrac_properties_typeProperties_baseUrl')]"
+					},
+					"SqlServe11_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServe11_properties_typeProperties_userName')]"
 					},
 					"linkedServicePrac_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('linkedServicePrac_properties_typeProperties_connectionString_secretName')]"

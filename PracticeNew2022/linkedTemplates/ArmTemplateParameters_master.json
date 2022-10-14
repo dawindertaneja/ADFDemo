@@ -14,11 +14,11 @@
 		"SqlServe11_password": {
 			"value": ""
 		},
-		"SqlServe11_properties_typeProperties_userName": {
-			"value": "LAPTOP-NN2BEUF4\\dawin"
-		},
 		"AzureKeyPrac_properties_typeProperties_baseUrl": {
 			"value": "https://KV-DEV-PRACTICE-NEW.vault.azure.net/"
+		},
+		"SqlServe11_properties_typeProperties_userName": {
+			"value": "LAPTOP-NN2BEUF4\\dawin"
 		},
 		"linkedServicePrac_properties_typeProperties_connectionString_secretName": {
 			"value": "Secret-ConnectionStr"
