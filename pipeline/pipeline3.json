@@ -55,6 +55,10 @@
 							"root": {
 								"value": "@pipeline().parameters.rootpth",
 								"type": "Expression"
+							},
+							"file": {
+								"value": "@pipeline().parameters.FileName",
+								"type": "Expression"
 							}
 						}
 					}
