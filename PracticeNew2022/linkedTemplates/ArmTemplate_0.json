@@ -492,7 +492,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"root": {
-										"value": "@pipeline().parameters.rootpth",
+										"value": "@pipeline().globalParameters.RootPath",
 										"type": "Expression"
 									},
 									"file": {
@@ -516,10 +516,6 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"rootpth": {
-						"type": "string",
-						"defaultValue": "input"
-					},
 					"FileName": {
 						"type": "string",
 						"defaultValue": "Employee.txt"
@@ -589,7 +585,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"root": {
-										"value": "@pipeline().parameters.rootpth",
+										"value": "@pipeline().globalParameters.RootPath",
 										"type": "Expression"
 									},
 									"file": {
@@ -613,10 +609,6 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"rootpth": {
-						"type": "string",
-						"defaultValue": "input"
-					},
 					"FileName": {
 						"type": "string",
 						"defaultValue": "Department.txt"
