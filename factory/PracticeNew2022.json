@@ -1,5 +1,13 @@
 {
 	"name": "PracticeNew2022",
+	"properties": {
+		"globalParameters": {
+			"RootPath": {
+				"type": "string",
+				"value": "input"
+			}
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
